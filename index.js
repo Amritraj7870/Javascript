@@ -1,145 +1,145 @@
 console.log("hello coders ,doing great");
-
-// let n=3;
-// for (let i = 1; i <= n; i++) {
-//     let row = "";
-//     for (let j = 1; j <= 4; j++) {
-//         row = row+"*";
-//     }
-//     console.log(row);
-// }
-
-
-
-// let n=5
-// for(let i=1;i<=n;i++ ){
-//     let row="";
-//     for(let j=1;j<=i;j++){
-//         row=row+"*"
-//     }
-//     console.log(row)
-// }
-
-             
-
-
-// let n=5;
-// for(let i=1;i<=n;i++){
-//     let space='';
-//     for(let j=1;j<=n-i;j++){
-//         space+=' ';
-//     }
-//     let row='';
-//     for(let j=1;j<=i;j++){
-//    row=row+"*";
-//     }
-//     console.log(space+row);
-// }
-
-
-// var age =number(prompt("enter your age"));
-// if(age>=18)
-// {
-//     consolke,log("u r eligiblr for vote")
-// }
-// if(age<18)
-// {
-//     console.log("u r noteligible for vote")
-// }
-
-
-// const readline = require('readline');
-
-// const rl = readline.createInterface({
-//     input: process.stdin,
-//     output: process.stdout
-// });
-
-// rl.question('Enter your age: ', (input) => {
-//     let age = Number(input);
-
-//     if (isNaN(age)) {
-//         console.log("Please enter a valid number.");
-//     } else {
-//         if (age >= 18) {
-//             console.log("You are eligible to vote.");
-//         } else {
-//             console.log("You are not eligible to vote.");
-//         }
-//     }
-
-//     rl.close();
-// });
-
-
-// let a=89;
-// let b=6;
-// console.log(a+b)
-
-
-// let n=11;
-// for(var i=2;i<n;i++){
-//     if(n%i==0){
-//         break;
-//     }
-// }
-// if(i==n){
-//     console.log("this is  prime number",n)
-// }else{
-//     console.log("it is not prime",n)
-// }
-
-//  let a=23;
-//   a=25
-// console.log(a);
-
-   // function is a blocks of codes used to execute some tasks .
-
-   function sum(a,b,c){
-    let y=67;
-  function inner(){
-   let x=23;
-   console.log(y)
-   
-  }
- 
- return  inner();
-  console.log("hhi");
-
-}
-let res=sum(3,78,2);
-
-
-function isPrime(num){
-
-
-for(var i=2;i<num;i++){
-   if(num%i==0){
-       break;
-   }
-}
-if(i==num){
-   console.log("ït is isPrime",num,);
-}else{
-console.log("ït is not prime num",num);
-}
-
-
-}
-
-isPrime(9);
-
-function findNatural(n){
-for(let x=1;x<=n;x++){
-   console.log(x)
-}
-}
-findNatural(12)
-
-
+  
 
 // synchronous code:it execute code line by line.
+
 
 console.log("hello amrit");
 console.log("hey dude");
 console.log(12)
+
+
+// in how namy ways we can handle asynchronous code
+
+let promise= new Promise((resolve, reject) => {
+   let a=2;
+   if(a>6){
+    resolve("promise are fullfilled")
+   }    
+   else{
+    reject("promise are rejected")
+   }
+})
+promise.then((result)=>{
+    console.log(result)
+}).catch((err)=>{
+    console.log(err)
+})
+
+
+//  async nd await
+
+
+
+function fetchData(){
+   return "fetch  data successfully"
+  
+}
+async function myFunc(){
+    
+    try {
+        let res =await fetchData();
+    console.log(res);
+   
+        
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+myFunc();
+
+
+
+function outer(){
+    let x=5
+    function inner(){
+        console.log(x)
+    }
+    inner()
+
+}
+outer()
+
+  
+//   closure is a function that has access to the parent scope,
+// even after the parent function has closed. 
+
+function outer(){
+    let x=7
+    function inner(){
+        console.log(x)
+    }
+    return inner
+}
+const fn = outer()
+fn()
+
+// 
+// callback is a function , which can be passed in another function as a perimeter
+
+function outer(callback){
+    console.log("amrit")
+callback(2,3)
+}
+outer(bottle)
+
+
+function bottle(a,b){
+    console.log(a+b)
+    
+}
+
+    
+// shallow copy and deep copy.
+
+const person={
+ name:"abhishek kumar",
+ profession:"software enginner",
+ address:{
+     city:"sasaram"
+}
+}
+const obj1={...person}
+obj1.name="ankit"
+obj1.address.city="baradih"
+console.log(obj1)
+console.log(person)
+
+
+//  deep copy
+
+const obj2= structuredClone(person);
+
+obj2.address.city = "baradih";
+
+console.log(person.address.city); // sasaram
+console.log(obj2.address.city);   // baradih
+
+// ## anynamous function is a function which does not have any name and it is used to create a function without a name.
+
+function outer() {
+    let a = 9;
+
+    return function () {
+        return a;
+    };
+}
+
+const ans = outer();
+
+console.log(ans()); // 9
+
+function outer(){
+    let a=9
+   
+    return function inner (){
+        return a
+        
+    }   
+}
+
+const res=outer()
+
+console.log(res())  //9
+
